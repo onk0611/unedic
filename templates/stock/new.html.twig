@@ -1,11 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Stock{% endblock %}
+{% block title %}Nouvel Article{% endblock %}
 
 {% block body %}
-    <h1>Create new Stock</h1>
-
+    <h1>Créer un nouvel article</h1>
+    <a href="{{ path('app_stock_index') }}"><i class="fa-solid fa-arrow-rotate-left"></i> Retour à la liste</a>
     {{ include('stock/_form.html.twig') }}
-
-    <a href="{{ path('app_stock_index') }}">back to list</a>
 {% endblock %}

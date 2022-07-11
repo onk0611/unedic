@@ -1,5 +1,13 @@
 {{ form_start(form) }}
+<style>
+.containerForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+</style>
+<div class="containerForm">
     {{ form_widget(form) }}
-    <button class="btn"><i class="fa-solid fa-floppy-disk"></i></button>
+    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+</div>
 {{ form_end(form) }}
-{# {{ button_label|default('Sauvegarder') }} #}

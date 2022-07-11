@@ -50,3 +50,7 @@ td {
 .btnDelete:hover {
     background-color: aliceblue;
 }
+
+.red {
+    color: red;
+}
