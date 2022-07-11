@@ -22,8 +22,8 @@ class Stock
     #[ORM\Column(type: 'integer')]
     private $stock;
 
-    #[ORM\Column(type: 'datetime_immutable')]
-    private $date;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $price;
 
     public function getId(): ?int
     {
@@ -66,14 +66,14 @@ class Stock
         return $this;
     }
 
-    public function getDate(): ?\DateTimeImmutable
+    public function getPrice(): ?string
     {
-        return $this->date;
+        return $this->price;
     }
 
-    public function setDate(\DateTimeImmutable $date): self
+    public function setPrice(string $price): self
     {
-        $this->date = $date;
+        $this->price = $price;
 
         return $this;
     }

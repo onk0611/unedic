@@ -1,41 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Stock index{% endblock %}
+{% block title %}Gestionnaire de stock{% endblock %}
 
 {% block body %}
-    <h1>Stock index</h1>
-
-    <table class="table">
-        <thead>
+    <table class="tableStock" width="100%">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Stock</th>
-                <th>Date</th>
-                <th>actions</th>
+                <th class="titleProduct">Nom</th>
+                <th class="titleProduct">Description</th>
+                <th class="titleProduct">Nombre de pièces disponibles</th>
+                <th class="titleProduct">Prix / unité</th>
+                <th class="titleProduct">Actions</th>
             </tr>
-        </thead>
-        <tbody>
         {% for stock in stocks %}
             <tr>
-                <td>{{ stock.id }}</td>
-                <td>{{ stock.name }}</td>
-                <td>{{ stock.description }}</td>
-                <td>{{ stock.stock }}</td>
-                <td>{{ stock.date ? stock.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_stock_show', {'id': stock.id}) }}">show</a>
-                    <a href="{{ path('app_stock_edit', {'id': stock.id}) }}">edit</a>
+                <td class="itemProduct">{{ stock.name }}</td>
+                <td class="itemProduct">{{ stock.description }}</td>
+                <td class="itemProduct">{{ stock.stock }}</td>
+                <td class="itemProduct">{{ stock.price }} €</td>
+                <td class="itemProduct">
+                    <a href="{{ path('app_stock_show', {'id': stock.id}) }}"><i class="fa-solid fa-eye"></i></a> /
+                    <a href="{{ path('app_stock_edit', {'id': stock.id}) }}"><i class="fa-solid fa-pen-to-square"></i></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun article trouvée</td>
             </tr>
         {% endfor %}
-        </tbody>
     </table>
-
-    <a href="{{ path('app_stock_new') }}">Create new</a>
+    <a href="{{ path('app_stock_new') }}"><i class="fa-solid fa-circle-plus"></i> Ajouter un nouvelle article</a>
 {% endblock %}

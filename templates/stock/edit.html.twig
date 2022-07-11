@@ -3,11 +3,11 @@
 {% block title %}Edit Stock{% endblock %}
 
 {% block body %}
-    <h1>Edit Stock</h1>
+    <h1>Modifier {{ stock.name }}</h1>
 
-    {{ include('stock/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('stock/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('app_stock_index') }}">back to list</a>
+    <a href="{{ path('app_stock_index') }}"><i class="fa-solid fa-backward"></i></a>
 
     {{ include('stock/_delete_form.html.twig') }}
 {% endblock %}
