@@ -15,7 +15,7 @@ class StockType extends AbstractType
             ->add('name')
             ->add('description')
             ->add('stock')
-            ->add(time())
+            ->add('date')
         ;
     }
 
