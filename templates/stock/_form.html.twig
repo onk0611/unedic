@@ -7,7 +7,10 @@
 }
 </style>
 <div class="containerForm">
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+    {{ form_widget(form.name, {'attr': {class: 'inputItem', 'placeholder': 'nom de l\'article'}}) }}
+    {{ form_widget(form.description, {'attr': {class: 'inputItem', 'placeholder': 'description de l\'article'}}) }}
+    {{ form_widget(form.stock, {'attr': {class: 'inputItem', 'placeholder': 'nombre d\'article en stock'}}) }}
+    {{ form_widget(form.price, {'attr': {class: 'inputItem', 'placeholder': 'prix de l\'article'}}) }}
+    <button class="btn btnSaveProduct">{{ button_label|default('Sauvegarder') }}</button>
 </div>
 {{ form_end(form) }}

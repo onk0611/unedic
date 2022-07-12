@@ -51,6 +51,25 @@ td {
     background-color: aliceblue;
 }
 
-.red {
-    color: red;
+.inputItem {
+    border: none;
+    border-bottom: 1px solid rgb(88, 88, 88);
+    padding: 0.5em 2em 0.5em 0.4em;
+    margin: 0.4em;
+    font-size: 14px;
+    width: 40%;
+}
+
+.btnSaveProduct {
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    background-color: rgb(230, 230, 230);
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    transition-duration: 400ms;
+}
+
+.btnSaveProduct:hover {
+    background-color: rgb(170, 170, 170);
 }
